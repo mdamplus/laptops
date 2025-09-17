@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+  <settings pass="generalize">
+    <component name="Microsoft-Windows-PnpSysprep" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+      <PersistAllDeviceInstalls>false</PersistAllDeviceInstalls>
+      <DoNotCleanUpNonPresentDevices>false</DoNotCleanUpNonPresentDevices>
+    </component>
+  </settings>
+
+  <settings pass="specialize">
+    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+      <CopyProfile>true</CopyProfile>
+      <ComputerName>*</ComputerName>
+      <RegisteredOrganization>Asociación Arrabal</RegisteredOrganization>
+      <RegisteredOwner>Arrabal AID</RegisteredOwner>
+      <TimeZone>Romance Standard Time</TimeZone>
+    </component>
+  </settings>
+
+  <settings pass="oobeSystem">
+    <component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+      <InputLocale>es-ES</InputLocale>
+      <SystemLocale>es-ES</SystemLocale>
+      <UILanguage>es-ES</UILanguage>
+      <UserLocale>es-ES</UserLocale>
+    </component>
+    <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+      <OOBE>
+        <HideEULAPage>true</HideEULAPage>
+        <HideLocalAccountScreen>false</HideLocalAccountScreen>
+        <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+        <HideOnlineAccountScreens>false</HideOnlineAccountScreens>
+        <ProtectYourPC>3</ProtectYourPC> <!-- 3 = No actualizar automáticamente en el OOBE -->
+      </OOBE>
+      <RegisteredOrganization>Asociación Arrabal</RegisteredOrganization>
+      <RegisteredOwner>Arrabal AID</RegisteredOwner>
+    </component>
+  </settings>
+
+  <cpi:offlineImage cpi:source="wim:c:/install.wim#Windows 11" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+</unattend>
